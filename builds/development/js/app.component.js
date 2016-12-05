@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', 'ng2-youtube-player'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,12 +10,15 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, ng2_youtube_player_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (ng2_youtube_player_1_1) {
+                ng2_youtube_player_1 = ng2_youtube_player_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -23,16 +26,14 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 //   this.name=myName;
                 // }
                 function AppComponent() {
-                    // Yea, that's a evaluation statement!
-                    // It's on the todo list to convert Plyr into a NG2 library.
-                    // Otherwise, it's a delayed evaluation to init it for now.
-                    eval("\n      var instances;\n      setTimeout(()=>{\n        instances = plyr.setup();\n      },2000);\n      ");
                 }
                 AppComponent.prototype.next = function () {
                     console.log('success');
                 };
                 AppComponent = __decorate([
                     core_1.Component({
+                        // @NgModule({
+                        imports: [ng2_youtube_player_1.YoutubePlayerModule],
                         selector: 'main',
                         templateUrl: 'partials/app.html',
                     }), 

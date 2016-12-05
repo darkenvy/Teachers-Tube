@@ -1,1 +1,0 @@
-var instances = plyr.setup();
