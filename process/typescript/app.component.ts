@@ -36,6 +36,10 @@ import {Component} from '@angular/core'
         </section>
       </div>
     </div>
+
+    <button (click)="deets()">details</button>
+    <button (click)="seek()">seek to 0:20</button>
+    <button (click)="change()">change</button>
   `
 })
 export class AppComponent {
@@ -43,9 +47,7 @@ export class AppComponent {
   private player;
   private ytEvent;
 
-  constructor() {
-    
-  }
+  constructor() {}
   onStateChange(event) {
     this.ytEvent = event.data;
   }
@@ -60,4 +62,18 @@ export class AppComponent {
   pauseVideo() {
     this.player.pauseVideo();
   }
+
+  deets() {
+    console.log('++++ PLAYER:', this.player);
+    console.log('current time', this.player.getCurrentTime());
+    // console.log('thi');
+  }
+  seek() {
+    this.player.seekTo(20)
+  }
+  change() {
+    this.player.cueVideoById('6twEdvyvadg')
+  }
+
+
 }

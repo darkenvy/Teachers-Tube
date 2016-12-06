@@ -98,5 +98,5 @@ gulp.task('minify-webserver', function() {
 // Task two is for testing deployment with minification (much slower)
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– //
 
-gulp.task('default', ['sass', 'copylibs', 'typescript', 'watch', 'webserver']);
+gulp.task('default', ['sass', 'typescript', 'watch', 'webserver']);
 // gulp.task('default', ['sass', 'copylibs', 'typescript', 'watch', 'minify-watch', 'minify-webserver']);

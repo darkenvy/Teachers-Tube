@@ -8,24 +8,14 @@ System.config({
   //map tells the System loader where to look for things
   map: {
     app: './js',
-    '@angular': 'https://unpkg.com/@angular',
-    '@angular/common': 'https://unpkg.com/@angular/common@2.0.1',
-    '@angular/core': 'https://unpkg.com/@angular/core@2.0.1',
-    '@angular/compiler': 'https://unpkg.com/@angular/compiler@2.0.1',
-    '@angular/platform-browser-dynamic': 'https://unpkg.com/@angular/platform-browser-dynamic@2.0.1',
-    '@angular/platform-browser': 'https://unpkg.com/@angular/platform-browser@2.0.1',
-    'rxjs': 'https://unpkg.com/rxjs@5.0.0-beta.12',
-    'ng2-youtube-player': 'https://unpkg.com/ng2-youtube-player@0.0.1'
-
-    // ++++++ When migrating to a full host site, use this: ++++++++
-    // '@angular': 'node_modules/@angular',
-    // '@angular/common': 'node_modules/@angular/common@2.0.1',
-    // '@angular/core': 'node_modules/@angular/core@2.0.1',
-    // '@angular/compiler': 'node_modules/@angular/compiler@2.0.1',
-    // '@angular/platform-browser-dynamic': 'node_modules/@angular/platform-browser-dynamic@2.0.1',
-    // '@angular/platform-browser': 'node_modules/@angular/platform-browser@2.0.1',
-    // 'rxjs': 'node_modules/rxjs@5.0.0-beta.12',
-    // 'ng2-youtube-player': 'node_modules/ng2-youtube-player@0.0.1'
+    // '@angular': 'https://unpkg.com/@angular', // Dead link. idk if need
+    '@angular/common': 'js/lib/modules/@angular/common',
+    '@angular/core': 'js/lib/modules/@angular/core',
+    '@angular/compiler': 'js/lib/modules/@angular/compiler',
+    '@angular/platform-browser-dynamic': 'js/lib/modules/@angular/platform-browser-dynamic',
+    '@angular/platform-browser': 'js/lib/modules/@angular/platform-browser',
+    'rxjs': 'js/lib/modules/rxjs',
+    'ng2-youtube-player': 'js/lib/modules/ng2-youtube-player'
   },
   //packages defines our app package
   packages: {

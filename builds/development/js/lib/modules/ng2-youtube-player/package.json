@@ -1,0 +1,147 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "ng2-youtube-player@0.0.1",
+        "scope": null,
+        "escapedName": "ng2-youtube-player",
+        "name": "ng2-youtube-player",
+        "rawSpec": "0.0.1",
+        "spec": "0.0.1",
+        "type": "version"
+      },
+      "/Users/user1/git/youtube-editer"
+    ]
+  ],
+  "_from": "ng2-youtube-player@0.0.1",
+  "_id": "ng2-youtube-player@0.0.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/ng2-youtube-player",
+  "_nodeVersion": "5.9.1",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/ng2-youtube-player-0.0.1.tgz_1476383631598_0.21325740590691566"
+  },
+  "_npmUser": {
+    "name": "orizens",
+    "email": "farhioren@gmail.com"
+  },
+  "_npmVersion": "3.7.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "ng2-youtube-player@0.0.1",
+    "scope": null,
+    "escapedName": "ng2-youtube-player",
+    "name": "ng2-youtube-player",
+    "rawSpec": "0.0.1",
+    "spec": "0.0.1",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ng2-youtube-player/-/ng2-youtube-player-0.0.1.tgz",
+  "_shasum": "84ad75abde38c0873eff24fe7104d72230e95f04",
+  "_shrinkwrap": null,
+  "_spec": "ng2-youtube-player@0.0.1",
+  "_where": "/Users/user1/git/youtube-editer",
+  "author": {
+    "name": "Oren Farhi"
+  },
+  "bugs": {
+    "url": "https://github.com/orizens/ng2-youtube-player/issues"
+  },
+  "dependencies": {},
+  "description": "A Youtube Player Component for angular2",
+  "devDependencies": {
+    "@angular/common": "2.0.1",
+    "@angular/compiler": "2.0.1",
+    "@angular/compiler-cli": "^0.6.2",
+    "@angular/core": "2.0.1",
+    "@angular/http": "^2.0.1",
+    "@angular/platform-browser": "2.0.1",
+    "@angular/platform-browser-dynamic": "2.0.1",
+    "@types/core-js": "^0.9.32",
+    "@types/jasmine": "^2.2.33",
+    "@types/node": "^6.0.38",
+    "@types/youtube": "0.0.27",
+    "autodts": "0.0.6",
+    "awesome-typescript-loader": "^2.2.4",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "istanbul-instrumenter-loader": "^1.0.0",
+    "jasmine-core": "2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-cli": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-mocha-reporter": "2.0.4",
+    "karma-phantomjs-launcher": "1.0.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.8.0",
+    "lite-server": "2.2.0",
+    "path": "^0.12.7",
+    "phantomjs-prebuilt": "^2.1.7",
+    "reflect-metadata": "0.1.2",
+    "rimraf": "2.5.2",
+    "rxjs": "5.0.0-beta.12",
+    "source-map-loader": "^0.1.5",
+    "systemjs": "0.19.31",
+    "systemjs-builder": "^0.15.16",
+    "ts-helpers": "^1.1.1",
+    "tslint": "^3.15.1",
+    "tslint-loader": "^2.1.5",
+    "typescript": "2.0.3",
+    "typings": "1.2.0",
+    "webpack": "2.1.0-beta.21",
+    "zone.js": "^0.6.17"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "84ad75abde38c0873eff24fe7104d72230e95f04",
+    "tarball": "https://registry.npmjs.org/ng2-youtube-player/-/ng2-youtube-player-0.0.1.tgz"
+  },
+  "gitHead": "1d45ceecfc501c0bde221979ca9ed505e436728d",
+  "homepage": "https://github.com/orizens/ng2-youtube-player#readme",
+  "keywords": [
+    "angular2",
+    "youtube",
+    "youtube player"
+  ],
+  "license": "MIT",
+  "main": "ng2-youtube-player.js",
+  "maintainers": [
+    {
+      "name": "orizens",
+      "email": "farhioren@gmail.com"
+    }
+  ],
+  "name": "ng2-youtube-player",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orizens/ng2-youtube-player.git"
+  },
+  "scripts": {
+    "build:test": "tsc --project ./src",
+    "clean": "rimraf src/*.js && rimraf src/*.d.ts && rimraf ./*scroll.js && rimraf ./*scroll.d.ts",
+    "clean:node": "rimraf node_modules",
+    "dev": "npm run watch & karma start karma.conf.js --bdd",
+    "lite": "lite-server",
+    "postversion": "git push origin master",
+    "prepublish": "node ./node_modules/@angular/compiler-cli/src/main.js && node make.js",
+    "pretest": "npm run clean && npm run build:test",
+    "preversion": "npm run clean && npm run prepublish && npm test",
+    "setup": "npm run typings -- install",
+    "start": "npm run build && npm run lite",
+    "test": "karma start karma.conf.js",
+    "typings": "typings",
+    "version": "git add ./",
+    "watch": "tsc --project ./src --watch"
+  },
+  "typings": "./ng2-youtube-player.d.ts",
+  "version": "0.0.1"
+}

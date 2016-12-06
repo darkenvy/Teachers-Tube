@@ -34,11 +34,22 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 AppComponent.prototype.pauseVideo = function () {
                     this.player.pauseVideo();
                 };
+                AppComponent.prototype.deets = function () {
+                    console.log('++++ PLAYER:', this.player);
+                    console.log('current time', this.player.getCurrentTime());
+                    // console.log('thi');
+                };
+                AppComponent.prototype.seek = function () {
+                    this.player.seekTo(20);
+                };
+                AppComponent.prototype.change = function () {
+                    this.player.cueVideoById('6twEdvyvadg');
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
                         styles: ["\n  \n  "],
-                        template: "\n    <div class=\"container\">\n      <section class=\"panel\">\n        <div class=\"panel-heading\">Ng2 Youtube Player Component</div>\n        <div class=\"panel-body\">\n          <youtube-player \n            [videoId]=\"id\" \n            (ready)=\"savePlayer($event)\"\n            (change)=\"onStateChange($event)\"\n          >\n          </youtube-player>\n        </div>\n      </section>\n      \n      <div class=\"col-md-12\">\n        <div class=\"btn-group\" role=\"group\">\n          <button type=\"button\" class=\"btn btn-default\" (click)=\"playVideo()\">Play</button>\n          <button type=\"button\" class=\"btn btn-default\" (click)=\"pauseVideo()\">Pause</button>\n        </div>\n      </div>\n      \n      <div class=\"col-md-12\">\n        <section class=\"panel\">\n          <div class=\"panel-title\">Player State</div>\n          <div class=\"panel-body\">\n            <pre>{{ ytEvent }}</pre>\n          </div>\n        </section>\n      </div>\n    </div>\n  "
+                        template: "\n    <div class=\"container\">\n      <section class=\"panel\">\n        <div class=\"panel-heading\">Ng2 Youtube Player Component</div>\n        <div class=\"panel-body\">\n          <youtube-player \n            [videoId]=\"id\" \n            (ready)=\"savePlayer($event)\"\n            (change)=\"onStateChange($event)\"\n          >\n          </youtube-player>\n        </div>\n      </section>\n      \n      <div class=\"col-md-12\">\n        <div class=\"btn-group\" role=\"group\">\n          <button type=\"button\" class=\"btn btn-default\" (click)=\"playVideo()\">Play</button>\n          <button type=\"button\" class=\"btn btn-default\" (click)=\"pauseVideo()\">Pause</button>\n        </div>\n      </div>\n      \n      <div class=\"col-md-12\">\n        <section class=\"panel\">\n          <div class=\"panel-title\">Player State</div>\n          <div class=\"panel-body\">\n            <pre>{{ ytEvent }}</pre>\n          </div>\n        </section>\n      </div>\n    </div>\n\n    <button (click)=\"deets()\">details</button>\n    <button (click)=\"seek()\">seek to 0:20</button>\n    <button (click)=\"change()\">change</button>\n  "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
