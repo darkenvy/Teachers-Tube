@@ -8,6 +8,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@angular/core": "^2.2.4",
     "angular2": "2.0.0-beta.2",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.3",
@@ -23,6 +24,9 @@
     "zone.js": "0.5.10"
   },
   "dependencies": {
+    "@angular/core": "^2.2.4",
+    "@angular/platform-browser": "^2.2.4",
+    "@angular/platform-browser-dynamic": "^2.2.4",
     "ng2-youtube-player": "0.0.1"
   },
   "description": ""

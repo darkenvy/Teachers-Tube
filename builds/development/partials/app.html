@@ -1,12 +1,5 @@
-<div data-type="youtube" data-video-id="wmrsbY3MCZs"></div>
-<div class="well">
-  <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-    <h3>1</h3>
-  </div>
-  <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-    30:30 – 32:00
-  </div>
-  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-    <button class="btn btn-primary" (click)="next()">1</button>
-  </div>
-</div>
+<youtube-player
+      [videoId]="id"
+      (ready)="savePlayer($event)"
+      (change)="onStateChange($event)">
+</youtube-player>

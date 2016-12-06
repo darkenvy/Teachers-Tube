@@ -1,27 +1,14 @@
-import {Component} from 'angular2/core';
-import { NgModule } from 'angular2/core';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { YoutubePlayerModule } from 'ng2-youtube-player';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { Main } from './main';
 
-
-@Component({
-// @NgModule({
-  imports:[YoutubePlayerModule],
-  selector: 'main',
-  templateUrl: 'partials/app.html',
-  // styleUrls: ['../css/app.css', 'css/plyr.css'] // idk why this isn't working
+@NgModule({
+  imports:[ BrowserModule, YoutubePlayerModule ],
+  declarations: [ Main, ]
+  // bootstrap: [ Main ]
 })
-export class AppComponent {
-  
-  next() {
-    console.log('success');
+export class AppModule { }
 
-  }
-  // onClick(myName) {
-  //   this.name=myName;
-  // }
-
-  constructor() {
-    
-  }
-}
-
+platformBrowserDynamic().bootstrapModule(AppModule);
