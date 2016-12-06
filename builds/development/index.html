@@ -1,38 +1,28 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>AngularJS2</title>
-    <link href='https://fonts.googleapis.com/css?family=Lato:700,400,100,200,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.css">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/plyr.css">
+    <title>angular2 playground</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
 
-    <!-- Polyfills and shims for older browsers -->
-    <script src="js/lib/angular2/es6-shim.min.js"></script>
-    <script src="js/lib/angular2/system-polyfills.js"></script>
-    <script src="js/lib/angular2/angular2-polyfills.js"></script>
+    <script src="js/lib/shim.min.js"></script>
 
-    <script src="js/lib/angular2/system.src.js"></script> <!-- Module loading library -->
-    <script src="js/lib/angular2/Rx.js"></script> <!-- Library for reactive programming. Adds Observables -->
-    <script src="js/lib/angular2/angular2.dev.js"></script> <!-- Angular itself -->
-    <!--  External Libraries -->
-    <!-- <script src="js/lib/plyr.js"></script> -->
-    <!-- <script src="js/lib/plyr-init.js"></script> -->
-
+    <script src="js/lib/zone.js"></script>
+    <script src="js/lib/reflect-metadata.js"></script>
+    <script src="js/lib/system.src.js"></script>
+    <script src="js/lib/typescript.js"></script>
+    <script src="js/config.js"></script>
     <script>
-      System.config({
-        packages: {js: {format: 'register', defaultExtension: 'js'}}
-      });
-      System.import('js/boot').then(null, console.error.bind(console));
-    </script>
-
+    System.import('app')
+      .catch(console.error.bind(console));
+  </script>
   </head>
 
-<body>
-  <main>Loading...</main>
-</body>
+  <body>
+    <my-app>
+    loading...
+  </my-app>
+  </body>
+
 </html>

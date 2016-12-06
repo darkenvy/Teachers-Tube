@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/platform-browser', 'ng2-youtube-player', '@angular/platform-browser-dynamic', './main'], function(exports_1, context_1) {
+System.register(['@angular/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,40 +10,41 @@ System.register(['@angular/core', '@angular/platform-browser', 'ng2-youtube-play
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, ng2_youtube_player_1, platform_browser_dynamic_1, main_1;
-    var AppModule;
+    var core_1;
+    var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (platform_browser_1_1) {
-                platform_browser_1 = platform_browser_1_1;
-            },
-            function (ng2_youtube_player_1_1) {
-                ng2_youtube_player_1 = ng2_youtube_player_1_1;
-            },
-            function (platform_browser_dynamic_1_1) {
-                platform_browser_dynamic_1 = platform_browser_dynamic_1_1;
-            },
-            function (main_1_1) {
-                main_1 = main_1_1;
             }],
         execute: function() {
-            AppModule = (function () {
-                function AppModule() {
+            AppComponent = (function () {
+                function AppComponent() {
+                    this.id = 'qDuKsiwS5xw';
                 }
-                AppModule = __decorate([
-                    core_1.NgModule({
-                        imports: [platform_browser_1.BrowserModule, ng2_youtube_player_1.YoutubePlayerModule],
-                        declarations: [main_1.Main,]
+                AppComponent.prototype.onStateChange = function (event) {
+                    this.ytEvent = event.data;
+                };
+                AppComponent.prototype.savePlayer = function (player) {
+                    this.player = player;
+                };
+                AppComponent.prototype.playVideo = function () {
+                    this.player.playVideo();
+                };
+                AppComponent.prototype.pauseVideo = function () {
+                    this.player.pauseVideo();
+                };
+                AppComponent = __decorate([
+                    core_1.Component({
+                        selector: 'my-app',
+                        styles: ["\n  \n  "],
+                        template: "\n    <div class=\"container\">\n      <section class=\"panel\">\n        <div class=\"panel-heading\">Ng2 Youtube Player Component</div>\n        <div class=\"panel-body\">\n          <youtube-player \n            [videoId]=\"id\" \n            (ready)=\"savePlayer($event)\"\n            (change)=\"onStateChange($event)\"\n          >\n          </youtube-player>\n        </div>\n      </section>\n      \n      <div class=\"col-md-12\">\n        <div class=\"btn-group\" role=\"group\">\n          <button type=\"button\" class=\"btn btn-default\" (click)=\"playVideo()\">Play</button>\n          <button type=\"button\" class=\"btn btn-default\" (click)=\"pauseVideo()\">Pause</button>\n        </div>\n      </div>\n      \n      <div class=\"col-md-12\">\n        <section class=\"panel\">\n          <div class=\"panel-title\">Player State</div>\n          <div class=\"panel-body\">\n            <pre>{{ ytEvent }}</pre>\n          </div>\n        </section>\n      </div>\n    </div>\n  "
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppModule);
-                return AppModule;
+                ], AppComponent);
+                return AppComponent;
             }());
-            exports_1("AppModule", AppModule);
-            platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(AppModule);
+            exports_1("AppComponent", AppComponent);
         }
     }
 });

@@ -1,21 +1,15 @@
-import {Component} from 'angular2/core';
+//main entry point
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { YoutubePlayerModule } from 'ng2-youtube-player';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppComponent } from './app.component.js';
 
-@Component({
-  selector: 'main',
-  templateUrl: 'partials/app.html',
-  // styleUrls: ['../css/app.css', 'css/plyr.css'] // idk why this isn't working
+@NgModule({
+  imports:[ BrowserModule, YoutubePlayerModule ],
+  declarations: [ AppComponent, ],
+  bootstrap: [ AppComponent ]
 })
-export class Main {
-  // player: YT.Player;
-  player: any;
-  private id: string = 'qDuKsiwS5xw';
+export class AppModule { }
 
-  savePlayer (player) {
-    this.player = player;
-    console.log('player instance', player)
-  }
-
-  onStateChange(event){
-    console.log('player state', event.data);
-  }
-}
+platformBrowserDynamic().bootstrapModule(AppModule);

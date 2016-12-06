@@ -44,14 +44,16 @@ gulp.task('minify', function() {
 gulp.task('copylibs', function() {
   return gulp
     .src([
-      'node_modules/es6-shim/es6-shim.min.js',
-      'node_modules/systemjs/dist/system-polyfills.js',
-      'node_modules/angular2/bundles/angular2-polyfills.js',
-      'node_modules/systemjs/dist/system.src.js',
+      // 'node_modules/@angular',
+      'node_modules/@angular/common/bundles/common.umd.js',
+      'node_modules/@angular/core/bundles/core.umd.js',
+      'node_modules/@angular/compiler/bundles/compiler.umd.js',
+      'node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+      'node_modules/@angular/platform-browser/bundles/platform-browser.umd.js',
       'node_modules/rxjs/bundles/Rx.js',
-      'node_modules/angular2/bundles/angular2.dev.js'
+      'node_modules/ng2-youtube-player/bundles/ng2-youtube-player.js'
     ])
-    .pipe(gulp.dest(appSrc + 'js/lib/angular2'));
+    .pipe(gulp.dest(appSrc + 'js/lib/nodemodules'));
 });
 
 gulp.task('typescript', function () {

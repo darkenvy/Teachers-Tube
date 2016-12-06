@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser', 'ng2-youtube-player', '@angular/platform-browser-dynamic', './app.component.js'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,35 +10,41 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
-    var Main;
+    var core_1, platform_browser_1, ng2_youtube_player_1, platform_browser_dynamic_1, app_component_js_1;
+    var AppModule;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (platform_browser_1_1) {
+                platform_browser_1 = platform_browser_1_1;
+            },
+            function (ng2_youtube_player_1_1) {
+                ng2_youtube_player_1 = ng2_youtube_player_1_1;
+            },
+            function (platform_browser_dynamic_1_1) {
+                platform_browser_dynamic_1 = platform_browser_dynamic_1_1;
+            },
+            function (app_component_js_1_1) {
+                app_component_js_1 = app_component_js_1_1;
             }],
         execute: function() {
-            Main = (function () {
-                function Main() {
-                    this.id = 'qDuKsiwS5xw';
+            AppModule = (function () {
+                function AppModule() {
                 }
-                Main.prototype.savePlayer = function (player) {
-                    this.player = player;
-                    console.log('player instance', player);
-                };
-                Main.prototype.onStateChange = function (event) {
-                    console.log('player state', event.data);
-                };
-                Main = __decorate([
-                    core_1.Component({
-                        selector: 'main',
-                        templateUrl: 'partials/app.html',
+                AppModule = __decorate([
+                    core_1.NgModule({
+                        imports: [platform_browser_1.BrowserModule, ng2_youtube_player_1.YoutubePlayerModule],
+                        declarations: [app_component_js_1.AppComponent,],
+                        bootstrap: [app_component_js_1.AppComponent]
                     }), 
                     __metadata('design:paramtypes', [])
-                ], Main);
-                return Main;
+                ], AppModule);
+                return AppModule;
             }());
-            exports_1("Main", Main);
+            exports_1("AppModule", AppModule);
+            platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(AppModule);
         }
     }
 });
