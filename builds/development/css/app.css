@@ -1,4 +1,8 @@
 /* App Styles */
+.selected {
+  background-color: #5e8fb9;
+  color: white; }
+
 /*-------------------*/
 /*-Bootstrap Resets -*/
 /*-------------------*/

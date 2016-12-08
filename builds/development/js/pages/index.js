@@ -19,21 +19,16 @@ System.register(['@angular/core'], function(exports_1, context_1) {
             }],
         execute: function() {
             AppComponent = (function () {
+                // private secondsToHuman(seconds) {
+                // }
                 function AppComponent() {
                     this.id = 'qDuKsiwS5xw';
+                    this.time1 = '';
+                    this.time2 = '';
                     this.timeList = [
-                        {
-                            start: '120',
-                            end: '840'
-                        },
-                        {
-                            start: '924',
-                            end: '926'
-                        },
-                        {
-                            start: '1877',
-                            end: '3754'
-                        }
+                        { start: '02:00', end: '14:00' },
+                        { start: '15:24', end: '15:26' },
+                        { start: '31:17', end: '01:52:34' }
                     ];
                 }
                 // Interface Functions
@@ -41,9 +36,25 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                     this.timeList.push({ start: '1776', end: '1777' });
                     console.log(this.timeList);
                 };
-                AppComponent.prototype.delete = function (e) {
-                    this.timeList.splice(0, 1);
+                AppComponent.prototype.delete = function (idx) {
+                    this.timeList.splice(idx, 1);
                     console.log(this.timeList);
+                };
+                AppComponent.prototype.edit = function (idx) {
+                    this.timeListSelected = idx;
+                    this.time1 = this.timeList[idx].start;
+                    this.time2 = this.timeList[idx].end;
+                };
+                AppComponent.prototype.timeChanged = function (value, entryNumber) {
+                    console.log(value, entryNumber, this.timeListSelected);
+                    if (this.timeListSelected !== undefined) {
+                        if (entryNumber === 1) {
+                            this.timeList[this.timeListSelected].start = value;
+                        }
+                        if (entryNumber === 2) {
+                            this.timeList[this.timeListSelected].end = value;
+                        }
+                    }
                 };
                 AppComponent = __decorate([
                     core_1.Component({

@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/platform-browser', 'ng2-youtube-player', '@angular/platform-browser-dynamic', './pages/index.js', './pipes/timeform.pipe.js'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser', 'ng2-youtube-player', '@angular/platform-browser-dynamic', './pages/index.js', './pipes/timeform.pipe.js', '@angular/forms'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/platform-browser', 'ng2-youtube-play
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, ng2_youtube_player_1, platform_browser_dynamic_1, index_js_1, timeform_pipe_js_1;
+    var core_1, platform_browser_1, ng2_youtube_player_1, platform_browser_dynamic_1, index_js_1, timeform_pipe_js_1, forms_1;
     var AppModule;
     return {
         setters:[
@@ -31,6 +31,9 @@ System.register(['@angular/core', '@angular/platform-browser', 'ng2-youtube-play
             },
             function (timeform_pipe_js_1_1) {
                 timeform_pipe_js_1 = timeform_pipe_js_1_1;
+            },
+            function (forms_1_1) {
+                forms_1 = forms_1_1;
             }],
         execute: function() {
             AppModule = (function () {
@@ -38,7 +41,7 @@ System.register(['@angular/core', '@angular/platform-browser', 'ng2-youtube-play
                 }
                 AppModule = __decorate([
                     core_1.NgModule({
-                        imports: [platform_browser_1.BrowserModule, ng2_youtube_player_1.YoutubePlayerModule],
+                        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, ng2_youtube_player_1.YoutubePlayerModule],
                         declarations: [index_js_1.AppComponent, timeform_pipe_js_1.TimeForm],
                         bootstrap: [index_js_1.AppComponent]
                     }), 

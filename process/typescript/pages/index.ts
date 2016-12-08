@@ -5,31 +5,22 @@ import {Component} from '@angular/core';
   selector: 'my-app',
   styleUrls: ['css/app.css'],
   templateUrl: 'partials/app.html'
-  // template: `
-  //   <button (click)="add()">Add</button>
-  //   <div *ngFor="let item of items">
-  //     <p>$ {{item}}</p>
-  //   </div>
-  // `
 })
 export class AppComponent {
   id = 'qDuKsiwS5xw';
   private player;
   private ytEvent;
+  time1 = '';
+  time2 = '';
+  timeListSelected : number;
   timeList = [
-    {
-      start: '120',
-      end: '840'
-    },
-    {
-      start: '924',
-      end: '926'
-    },
-    {
-      start: '1877',
-      end: '3754'
-    }
+    {start: '02:00', end: '14:00'},
+    {start: '15:24', end: '15:26'},
+    {start: '31:17', end: '01:52:34'}
   ];
+  // private secondsToHuman(seconds) {
+
+  // }
 
   constructor() {}
 
@@ -39,9 +30,27 @@ export class AppComponent {
     console.log(this.timeList);
   }
 
-  delete(e) {
-    this.timeList.splice(0, 1);
+  delete(idx) {
+    this.timeList.splice(idx, 1);
     console.log(this.timeList);
+  }
+
+  edit(idx) {
+    this.timeListSelected=idx
+    this.time1 = this.timeList[idx].start;
+    this.time2 = this.timeList[idx].end;
+  }
+
+  timeChanged(value, entryNumber) {
+    console.log(value, entryNumber, this.timeListSelected)
+    if (this.timeListSelected !== undefined) {
+      if (entryNumber === 1) {
+        this.timeList[this.timeListSelected].start = value;
+      }
+      if (entryNumber === 2) {
+        this.timeList[this.timeListSelected].end = value;
+      }
+    }
   }
 
 

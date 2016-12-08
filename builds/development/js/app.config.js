@@ -14,6 +14,7 @@ System.config({
         '@angular/compiler': 'js/lib/modules/@angular/compiler',
         '@angular/platform-browser-dynamic': 'js/lib/modules/@angular/platform-browser-dynamic',
         '@angular/platform-browser': 'js/lib/modules/@angular/platform-browser',
+        '@angular/forms': 'js/lib/modules/@angular/forms',
         'rxjs': 'js/lib/modules/rxjs',
         'ng2-youtube-player': 'js/lib/modules/ng2-youtube-player'
     },
@@ -41,6 +42,10 @@ System.config({
         },
         '@angular/platform-browser': {
             main: 'bundles/platform-browser.umd.js',
+            defaultExtension: 'js'
+        },
+        '@angular/forms': {
+            main: 'bundles/forms.umd.js',
             defaultExtension: 'js'
         },
         rxjs: {
