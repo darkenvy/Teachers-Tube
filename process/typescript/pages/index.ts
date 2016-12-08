@@ -22,11 +22,16 @@ export class AppComponent {
 
   // }
 
-  constructor() {}
+  constructor() {
+    this.timeListSelected = 0;
+    this.edit(this.timeListSelected);
+  }
 
   // Interface Functions
   add() {
-    this.timeList.push({start:'1776', end:'1777'});
+    this.timeList.push({start:'00:00', end:'00:01'});
+    this.timeListSelected = this.timeList.length-1;
+    this.edit(this.timeListSelected);
     console.log(this.timeList);
   }
 

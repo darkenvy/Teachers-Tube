@@ -30,10 +30,14 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         { start: '15:24', end: '15:26' },
                         { start: '31:17', end: '01:52:34' }
                     ];
+                    this.timeListSelected = 0;
+                    this.edit(this.timeListSelected);
                 }
                 // Interface Functions
                 AppComponent.prototype.add = function () {
-                    this.timeList.push({ start: '1776', end: '1777' });
+                    this.timeList.push({ start: '00:00', end: '00:01' });
+                    this.timeListSelected = this.timeList.length - 1;
+                    this.edit(this.timeListSelected);
                     console.log(this.timeList);
                 };
                 AppComponent.prototype.delete = function (idx) {
