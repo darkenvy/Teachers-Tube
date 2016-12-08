@@ -1,4 +1,4 @@
-System.register(['@angular/core'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser', 'ng2-youtube-player', '@angular/platform-browser-dynamic', './pages/index.js', './pipes/timeform.pipe.js'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,76 +10,44 @@ System.register(['@angular/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
-    var AppComponent;
+    var core_1, platform_browser_1, ng2_youtube_player_1, platform_browser_dynamic_1, index_js_1, timeform_pipe_js_1;
+    var AppModule;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (platform_browser_1_1) {
+                platform_browser_1 = platform_browser_1_1;
+            },
+            function (ng2_youtube_player_1_1) {
+                ng2_youtube_player_1 = ng2_youtube_player_1_1;
+            },
+            function (platform_browser_dynamic_1_1) {
+                platform_browser_dynamic_1 = platform_browser_dynamic_1_1;
+            },
+            function (index_js_1_1) {
+                index_js_1 = index_js_1_1;
+            },
+            function (timeform_pipe_js_1_1) {
+                timeform_pipe_js_1 = timeform_pipe_js_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
-                    this.id = 'qDuKsiwS5xw';
-                    this.timeList = [];
-                    this.timeList = [
-                        {
-                            start: '120',
-                            end: '840'
-                        },
-                        {
-                            start: '924',
-                            end: '926'
-                        },
-                        {
-                            start: '1877',
-                            end: '3754'
-                        }
-                    ];
+            AppModule = (function () {
+                function AppModule() {
                 }
-                // Interface Functions
-                AppComponent.prototype.add = function () {
-                    this.timeList.push({ start: '1776', end: '1777' });
-                };
-                AppComponent.prototype.delete = function (e) {
-                    this.timeList.splice(0, 1);
-                    console.log(this.timeList);
-                };
-                // Deep functions
-                AppComponent.prototype.onStateChange = function (event) {
-                    this.ytEvent = event.data;
-                };
-                AppComponent.prototype.savePlayer = function (player) {
-                    this.player = player;
-                };
-                AppComponent.prototype.playVideo = function () {
-                    this.player.playVideo();
-                };
-                AppComponent.prototype.pauseVideo = function () {
-                    this.player.pauseVideo();
-                };
-                AppComponent.prototype.deets = function () {
-                    console.log('++++ PLAYER:', this.player);
-                    console.log('current time', this.player.getCurrentTime());
-                    // console.log('thi');
-                };
-                AppComponent.prototype.seek = function () {
-                    this.player.seekTo(20);
-                };
-                AppComponent.prototype.change = function () {
-                    this.player.cueVideoById('6twEdvyvadg');
-                };
-                AppComponent = __decorate([
-                    core_1.Component({
-                        selector: 'my-app',
-                        styleUrls: ['css/app.css'],
-                        templateUrl: 'partials/app.html'
+                AppModule = __decorate([
+                    core_1.NgModule({
+                        imports: [platform_browser_1.BrowserModule, ng2_youtube_player_1.YoutubePlayerModule],
+                        declarations: [index_js_1.AppComponent, timeform_pipe_js_1.TimeForm],
+                        bootstrap: [index_js_1.AppComponent]
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], AppModule);
+                return AppModule;
             }());
-            exports_1("AppComponent", AppComponent);
+            exports_1("AppModule", AppModule);
+            platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(AppModule);
         }
     }
 });
