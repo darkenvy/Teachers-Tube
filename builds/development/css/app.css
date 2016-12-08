@@ -1,24 +1,32 @@
 /* App Styles */
-/* This is purely for the demo */
+/*-------------------*/
+/*-Bootstrap Resets -*/
+/*-------------------*/
 .container {
-  max-width: 800px;
-  margin: 0 auto; }
+  margin: 10px 0; }
 
-.plyr {
-  border-radius: 4px;
-  margin-bottom: 15px; }
+.well {
+  margin-bottom: 10px; }
 
-/*-------------------*/
-/*-   Well Resets   -*/
-/*-------------------*/
+.well button {
+  widows: inherit; }
+
 /*List Number*/
-.well div h3 {
-  margin-top: 4px; }
+.well {
+  padding-left: 0;
+  padding-right: 0; }
+
+.well div h4 {
+  margin-top: 7px; }
 
 /*General*/
 .well div {
   margin-top: -17px;
   height: 34px; }
 
-.well div.col-xs-7 {
+.well div.col-xs-6 {
   padding-top: 7px; }
+
+.well div.col-xs-3 {
+  padding-left: 0;
+  padding-right: 0; }

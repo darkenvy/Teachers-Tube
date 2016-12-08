@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <input class="start" type="text" class="input">
+    <input class="end" type="text" class="input">
+    <button class="btn btn-primary" (click)="add()">Add</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="well" *ngFor="let item of timeList; let idx=index"> <!-- comment fixer" -->
+    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+      <h4>{{idx + 1}}</h4>
+    </div>
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+      {{item.start | TimeForm }} – {{item.end | TimeForm}}
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      <button class="btn btn-default" (click)="edit()"><i class="fa fa-edit"></i></button>
+      <button class="btn btn-danger" (click)="delete(idx)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- <div class="container">
+  <section class="panel">
+    <div class="panel-heading">Ng2 Youtube Player Component</div>
+    <div class="panel-body">
+      <youtube-player 
+      [videoId]="id" 
+      (ready)="savePlayer($event)"
+      (change)="onStateChange($event)"></youtube-player>
+    </div>
+  </section>
+
+  <div class="col-md-12">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default" (click)="playVideo()">Play</button>
+      <button type="button" class="btn btn-default" (click)="pauseVideo()">Pause</button>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <section class="panel">
+      <div class="panel-title">Player State</div>
+      <div class="panel-body">
+        <pre>{{ ytEvent }}</pre>
+      </div>
+    </section>
+  </div>
+</div>
+
+<button (click)="deets()">details</button>
+<button (click)="seek()">seek to 0:20</button>
+<button (click)="change()">change</button> -->

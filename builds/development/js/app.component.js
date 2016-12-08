@@ -21,7 +21,31 @@ System.register(['@angular/core'], function(exports_1, context_1) {
             AppComponent = (function () {
                 function AppComponent() {
                     this.id = 'qDuKsiwS5xw';
+                    this.timeList = [];
+                    this.timeList = [
+                        {
+                            start: '120',
+                            end: '840'
+                        },
+                        {
+                            start: '924',
+                            end: '926'
+                        },
+                        {
+                            start: '1877',
+                            end: '3754'
+                        }
+                    ];
                 }
+                // Interface Functions
+                AppComponent.prototype.add = function () {
+                    this.timeList.push({ start: '1776', end: '1777' });
+                };
+                AppComponent.prototype.delete = function (e) {
+                    this.timeList.splice(0, 1);
+                    console.log(this.timeList);
+                };
+                // Deep functions
                 AppComponent.prototype.onStateChange = function (event) {
                     this.ytEvent = event.data;
                 };
@@ -48,8 +72,8 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        styles: ["\n  \n  "],
-                        template: "\n    <div class=\"container\">\n      <section class=\"panel\">\n        <div class=\"panel-heading\">Ng2 Youtube Player Component</div>\n        <div class=\"panel-body\">\n          <youtube-player \n            [videoId]=\"id\" \n            (ready)=\"savePlayer($event)\"\n            (change)=\"onStateChange($event)\"\n          >\n          </youtube-player>\n        </div>\n      </section>\n      \n      <div class=\"col-md-12\">\n        <div class=\"btn-group\" role=\"group\">\n          <button type=\"button\" class=\"btn btn-default\" (click)=\"playVideo()\">Play</button>\n          <button type=\"button\" class=\"btn btn-default\" (click)=\"pauseVideo()\">Pause</button>\n        </div>\n      </div>\n      \n      <div class=\"col-md-12\">\n        <section class=\"panel\">\n          <div class=\"panel-title\">Player State</div>\n          <div class=\"panel-body\">\n            <pre>{{ ytEvent }}</pre>\n          </div>\n        </section>\n      </div>\n    </div>\n\n    <button (click)=\"deets()\">details</button>\n    <button (click)=\"seek()\">seek to 0:20</button>\n    <button (click)=\"change()\">change</button>\n  "
+                        styleUrls: ['css/app.css'],
+                        templateUrl: 'partials/app.html'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
