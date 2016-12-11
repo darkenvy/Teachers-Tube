@@ -49,7 +49,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                     this.time1 = this.timeList[idx].start;
                     this.time2 = this.timeList[idx].end;
                 };
-                AppComponent.prototype.timeChanged = function (value, entryNumber) {
+                AppComponent.prototype.metadataChanged = function (value, entryNumber) {
                     console.log(value, entryNumber, this.timeListSelected);
                     if (this.timeListSelected !== undefined) {
                         if (entryNumber === 1) {
@@ -58,7 +58,32 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         if (entryNumber === 2) {
                             this.timeList[this.timeListSelected].end = value;
                         }
+                        if (entryNumber === 3) { }
                     }
+                };
+                // Deep functions
+                AppComponent.prototype.onStateChange = function (event) {
+                    this.ytEvent = event.data;
+                };
+                AppComponent.prototype.savePlayer = function (player) {
+                    this.player = player;
+                };
+                AppComponent.prototype.playVideo = function () {
+                    this.player.playVideo();
+                };
+                AppComponent.prototype.pauseVideo = function () {
+                    this.player.pauseVideo();
+                };
+                AppComponent.prototype.deets = function () {
+                    console.log('++++ PLAYER:', this.player);
+                    console.log('current time', this.player.getCurrentTime());
+                    // console.log('thi');
+                };
+                AppComponent.prototype.seek = function () {
+                    this.player.seekTo(20);
+                };
+                AppComponent.prototype.change = function () {
+                    this.player.cueVideoById('6twEdvyvadg');
                 };
                 AppComponent = __decorate([
                     core_1.Component({

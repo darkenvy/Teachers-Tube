@@ -46,7 +46,7 @@ export class AppComponent {
     this.time2 = this.timeList[idx].end;
   }
 
-  timeChanged(value, entryNumber) {
+  metadataChanged(value, entryNumber) {
     console.log(value, entryNumber, this.timeListSelected)
     if (this.timeListSelected !== undefined) {
       if (entryNumber === 1) {
@@ -55,38 +55,42 @@ export class AppComponent {
       if (entryNumber === 2) {
         this.timeList[this.timeListSelected].end = value;
       }
+      if (entryNumber === 3) {}
+
     }
   }
 
 
-  // // Deep functions
 
-  // onStateChange(event) {
-  //   this.ytEvent = event.data;
-  // }
-  // savePlayer(player) {
-  //   this.player = player;
-  // }
-  
-  // playVideo() {
-  //   this.player.playVideo();
-  // }
-  
-  // pauseVideo() {
-  //   this.player.pauseVideo();
-  // }
 
-  // deets() {
-  //   console.log('++++ PLAYER:', this.player);
-  //   console.log('current time', this.player.getCurrentTime());
-  //   // console.log('thi');
-  // }
-  // seek() {
-  //   this.player.seekTo(20)
-  // }
-  // change() {
-  //   this.player.cueVideoById('6twEdvyvadg')
-  // }
+  // Deep functions
+
+  onStateChange(event) {
+    this.ytEvent = event.data;
+  }
+  savePlayer(player) {
+    this.player = player;
+  }
+  
+  playVideo() {
+    this.player.playVideo();
+  }
+  
+  pauseVideo() {
+    this.player.pauseVideo();
+  }
+
+  deets() {
+    console.log('++++ PLAYER:', this.player);
+    console.log('current time', this.player.getCurrentTime());
+    // console.log('thi');
+  }
+  seek() {
+    this.player.seekTo(20)
+  }
+  change() {
+    this.player.cueVideoById('6twEdvyvadg')
+  }
 
 
 }

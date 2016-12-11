@@ -4,6 +4,10 @@
   color: white;
 }
 
+input {
+  width: 100px;
+}
+
 /*-------------------*/
 /*-Bootstrap Resets -*/
 /*-------------------*/
@@ -40,7 +44,7 @@
   padding-top: 7px;
 }
 
-.well div.col-xs-3 {
+.well div.col-xs-4 {
   padding-left: 0;
   padding-right: 0;
 }
