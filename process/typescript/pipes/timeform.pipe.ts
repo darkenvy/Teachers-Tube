@@ -1,3 +1,6 @@
+// NOT BEING USED. MAY DELETE
+
+
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({name: 'TimeForm'})

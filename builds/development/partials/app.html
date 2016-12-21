@@ -1,31 +1,33 @@
 <div class="container">
- <!--  <youtube-player 
+  <youtube-player 
     [videoId]="id" 
     (ready)="savePlayer($event)"
     (change)="onStateChange($event)">
-  </youtube-player> -->
+  </youtube-player>
 </div>
 
 <div class="container">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <input class="start" type="text" class="input" [(ngModel)]="time1" (ngModelChange)="metadataChanged($event, 1)">
     <input class="end" type="text" class="input" [(ngModel)]="time2" (ngModelChange)="metadataChanged($event, 2)">
-    <input class="vid" type="text" class="input" [(ngModel)]="vid" (ngModelChange)="metadataChanged($event, 3)">
-    <p>DEBUG: {{time1}} – {{time2}}</p>
+    <input class="vid" type="text" class="input" [(ngModel)]="vidUrl" (ngModelChange)="metadataChanged($event, 3)">
+    <p>DEBUG: {{time1}} – {{time2}} @ {{vidUrl}}</p>
+    <p>DEBUG2: ID: {{id}}</p>
   </div>
 </div>
 
 <div class="container">
-  <div class="well" *ngFor="let item of timeList; let idx=index"
-       [ngClass]="{selected: timeListSelected===idx}">
+  <div class="well" 
+  *ngFor="let item of timeList; let idx=index"
+  [ngClass]="{selected: timeListSelected===idx}">
     <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
       <h4>{{idx + 1}}</h4>
     </div>
     <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-      {{item.start}} – {{item.end}}
+      {{item.start}} – {{item.end}}  <span style="color: grey;">{{item.url}}</span>
     </div>
     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <button class="btn btn-default" (click)="play(idx)"><i class="fa fa-play" aria-hidden="true"></i></button>
+      <button class="btn btn-default" (click)="playVideo(idx)"><i class="fa fa-play" aria-hidden="true"></i></button>
       <button class="btn btn-default" (click)="edit(idx)"><i class="fa fa-edit"></i></button>
       <button class="btn btn-danger" (click)="delete(idx)" [disabled]="idx===0"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
     </div>

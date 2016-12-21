@@ -14,9 +14,10 @@ System.config({
     '@angular/compiler': 'js/lib/modules/@angular/compiler',
     '@angular/platform-browser-dynamic': 'js/lib/modules/@angular/platform-browser-dynamic',
     '@angular/platform-browser': 'js/lib/modules/@angular/platform-browser',
-    '@angular/forms': 'js/lib/modules/@angular/forms'
+    '@angular/forms': 'js/lib/modules/@angular/forms',
     'rxjs': 'js/lib/modules/rxjs',
-    'ng2-youtube-player': 'js/lib/modules/ng2-youtube-player'
+    'ng2-youtube-player': 'js/lib/modules/ng2-youtube-player',
+    'es6-promise': 'js/lib/modules/es6-promise'
 
   },
   //packages defines our app package
@@ -54,6 +55,10 @@ System.config({
     },
     'ng2-youtube-player': {
       main: 'ng2-youtube-player.js',
+      defaultExtension: 'js'
+    },
+    'es6-promise': {
+      main: 'dist/es6-promise.js',
       defaultExtension: 'js'
     }
   }
